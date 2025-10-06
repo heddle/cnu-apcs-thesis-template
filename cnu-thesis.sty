@@ -1,0 +1,174 @@
+% ============================================
+% Christopher Newport University Thesis Style
+% APCS Thesis Formatting (2019 Manual)
+% ============================================
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cnu-thesis}[2025/10/02 CNU Thesis Style Package]
+
+% -----------------------------
+% PACKAGES
+% -----------------------------
+\RequirePackage[letterpaper,top=1in,bottom=1in,right=1in,left=1.5in]{geometry}
+\RequirePackage{times} % Times New Roman
+\RequirePackage{setspace}
+\RequirePackage{titlesec}
+\RequirePackage{caption}
+
+% -----------------------------
+% LINE SPACING
+% -----------------------------
+\doublespacing
+
+% -----------------------------
+% CHAPTER FORMATTING
+% -----------------------------
+\titleformat{\chapter}[block]
+  {\normalfont\centering\bfseries\MakeUppercase}
+  {CHAPTER \thechapter:}{1em}{}
+
+% -----------------------------
+% CAPTION FORMATTING
+% -----------------------------
+\captionsetup[table]{position=above,skip=12pt}
+\captionsetup[figure]{position=below,skip=12pt}
+
+% -----------------------------
+% BLANK PAGE COMMAND
+% -----------------------------
+\newcommand{\blankpage}{
+    \clearpage
+    \thispagestyle{empty}
+    \null
+    \newpage
+}
+
+% -----------------------------
+% TITLE PAGE (APCS)
+% -----------------------------
+\newcommand{\thesistitlepage}[5]{
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+\MakeUppercase{#1} \\[2em]
+
+By \\[2em]
+
+#2 \\[2em]
+
+Thesis submitted to the Graduate Faculty of \\
+Christopher Newport University \\
+in partial fulfillment of the requirements \\
+for the degree of \\[1em]
+
+Master of Science \\
+#3 \\[2em]
+
+Approved: \\[2em]
+
+\underline{\hspace{2in}} \\ #4 \\[1em]
+\underline{\hspace{2in}} \\ #5 \\[1em]
+\underline{\hspace{2in}} \\ Committee Member
+\end{center}
+\blankpage % required blank after title
+}
+
+% -----------------------------
+% ABSTRACT (APCS)
+% -----------------------------
+\newcommand{\apcsabstract}[5]{
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+\textbf{ABSTRACT}
+\end{center}
+
+\noindent
+Title of Thesis: #1 \\[0.5em]
+Degree Candidate: #2 \\[0.5em]
+Degree and Year: Master of Science, #3 \\[0.5em]
+Thesis directed by: #4 \\[1em]
+
+#5
+
+\blankpage % required blank after abstract
+}
+
+% -----------------------------
+% FRONT MATTER START
+% (Roman numerals)
+% -----------------------------
+\newcommand{\frontmatter}{
+  \pagenumbering{roman}
+  \setcounter{page}{2} % Dedication is page ii
+}
+
+% -----------------------------
+% MAIN BODY START
+% (Arabic numerals)
+% -----------------------------
+\newcommand{\mainmatter}{
+  \clearpage
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+}
+
+% -----------------------------
+% DEDICATION
+% -----------------------------
+\newcommand{\dedication}[1]{
+\chapter*{DEDICATION}
+\addcontentsline{toc}{chapter}{Dedication}
+#1
+\newpage
+}
+
+% -----------------------------
+% ACKNOWLEDGEMENTS
+% -----------------------------
+\newcommand{\acknowledgements}[1]{
+\chapter*{ACKNOWLEDGEMENTS}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+#1
+\newpage
+}
+
+% -----------------------------
+% LITERATURE CITED
+% -----------------------------
+\newcommand{\literaturecited}[1]{
+\chapter*{LITERATURE CITED}
+\addcontentsline{toc}{chapter}{Literature Cited}
+\begin{singlespace}
+#1
+\end{singlespace}
+\blankpage % required blank after references
+}
+
+% -----------------------------
+% CNU TABLE
+% -----------------------------
+\newcommand{\cnuTable}[2]{
+\begin{center}
+\vspace{2\baselineskip}
+\begin{minipage}{0.9\textwidth}
+\captionof{table}{#1}
+\vspace{1em}
+#2
+\end{minipage}
+\vspace{2\baselineskip}
+\end{center}
+}
+
+% -----------------------------
+% CNU FIGURE
+% -----------------------------
+\newcommand{\cnuFigure}[2]{
+\begin{center}
+\vspace{2\baselineskip}
+#2
+\vspace{1em}
+\captionof{figure}{#1}
+\vspace{2\baselineskip}
+\end{center}
+}

@@ -1,0 +1,78 @@
+\documentclass[12pt,oneside]{report}
+
+% -----------------------------
+% CNU Thesis Style
+% -----------------------------
+\usepackage{cnu-thesis}
+
+% -----------------------------
+% Commonly Used Packages
+% -----------------------------
+\usepackage{amsmath, amssymb, amsfonts, mathtools, amsthm, bm}
+\usepackage{physics, siunitx, mhchem, circuitikz, tikz}
+\usepackage{listings, xcolor}
+\lstset{
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny,
+    breaklines=true,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red}
+}
+\usepackage{graphicx, subcaption, booktabs}
+\usepackage[backend=biber, style=authoryear, sorting=nyt]{biblatex}
+\addbibresource{references.bib}
+\usepackage{hyperref}
+
+% -----------------------------
+% Document Start
+% -----------------------------
+\begin{document}
+
+\apcsabstract
+{[Insert Thesis Title Here]}
+{[Student Full Legal Name]}
+{2025}
+{[Advisor Name, Degree, Title, Department]}
+{[Insert abstract text here. Max 150 words, double-spaced.]}
+
+\thesistitlepage
+{[Insert Thesis Title Here]}
+{[Student Full Legal Name]}
+{2025}
+{[Committee Chair]}
+{[Committee Member]}
+
+\frontmatter
+\dedication{[Optional dedication text]}
+\acknowledgements{[Acknowledgements text here]}
+
+\tableofcontents
+\listoftables
+\listoffigures
+
+\mainmatter
+
+\chapter{Introduction}
+This is sample text with a citation \cite{einstein1905}.
+\begin{equation}
+\nabla \cdot \vec{E} = \frac{\rho}{\epsilon_0}
+\end{equation}
+
+\chapter{Results}
+\cnuFigure{Sample Plot}{
+\includegraphics[width=0.6\textwidth]{example-image}
+}
+
+\chapter{Conclusions}
+Conclusions here.
+
+\printbibliography[title={LITERATURE CITED}]
+\blankpage
+
+\appendix
+\chapter{Sample Appendix}
+Appendix text here.
+
+\end{document}
