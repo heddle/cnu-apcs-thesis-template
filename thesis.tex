@@ -1,13 +1,5 @@
 \documentclass[12pt,oneside]{report}
-
-% -----------------------------
-% CNU Thesis Style
-% -----------------------------
 \usepackage{cnu-thesis}
-
-% -----------------------------
-% Commonly Used Packages
-% -----------------------------
 \usepackage{amsmath, amssymb, amsfonts, mathtools, amsthm, bm}
 \usepackage{physics, siunitx, mhchem, circuitikz, tikz}
 \usepackage{listings, xcolor}
@@ -25,54 +17,49 @@
 \addbibresource{references.bib}
 \usepackage{hyperref}
 
-% -----------------------------
-% Document Start
-% -----------------------------
 \begin{document}
 
 \apcsabstract
-{[Insert Thesis Title Here]}
-{[Student Full Legal Name]}
-{2025}
-{[Advisor Name, Degree, Title, Department]}
-{[Insert abstract text here. Max 150 words, double-spaced.]}
+{THESIS TITLE}
+{STUDENT NAME}
+{YEAR}
+{ADVISOR NAME, DEGREE, TITLE, DEPARTMENT}
+{ABSTRACT TEXT HERE.}
 
 \thesistitlepage
-{[Insert Thesis Title Here]}
-{[Student Full Legal Name]}
-{2025}
-{[Committee Chair]}
-{[Committee Member]}
+{THESIS TITLE}
+{STUDENT NAME}
+{YEAR}
+{COMMITTEE MEMBER 1}
+{COMMITTEE MEMBER 2}
+{COMMITTEE MEMBER 3}
 
 \frontmatter
-\dedication{[Optional dedication text]}
-\acknowledgements{[Acknowledgements text here]}
+\dedication{DEDICATION TEXT HERE.}
+\acknowledgements{ACKNOWLEDGEMENTS TEXT HERE.}
 
 \tableofcontents
 \listoftables
 \listoffigures
 
 \mainmatter
-
 \chapter{Introduction}
-This is sample text with a citation \cite{einstein1905}.
-\begin{equation}
-\nabla \cdot \vec{E} = \frac{\rho}{\epsilon_0}
-\end{equation}
+Your introduction here.
+
+\chapter{Methods}
+Your methods here.
 
 \chapter{Results}
-\cnuFigure{Sample Plot}{
-\includegraphics[width=0.6\textwidth]{example-image}
-}
+Your results here.
 
 \chapter{Conclusions}
-Conclusions here.
+Your conclusions here.
 
 \printbibliography[title={LITERATURE CITED}]
 \blankpage
 
 \appendix
-\chapter{Sample Appendix}
-Appendix text here.
+\chapter{Appendix Title}
+Additional material.
 
 \end{document}

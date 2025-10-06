@@ -1,0 +1,97 @@
+\documentclass[12pt,oneside]{report}
+
+\usepackage{cnu-thesis}
+
+% Common packages
+\usepackage{amsmath, amssymb, amsfonts, mathtools, amsthm, bm}
+\usepackage{physics, siunitx, mhchem, circuitikz, tikz}
+\usepackage{listings, xcolor}
+\lstset{
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny,
+    breaklines=true,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red}
+}
+\usepackage{graphicx, subcaption, booktabs}
+\usepackage[backend=biber, style=authoryear, sorting=nyt]{biblatex}
+\addbibresource{references.bib}
+\usepackage{hyperref}
+
+\begin{document}
+
+\apcsabstract
+{A STUDY OF SIMULATED WIND TUNNEL DATA}
+{JANE DOE}
+{2025}
+{DR. ERIN HARPER, PH.D., ASSOCIATE PROFESSOR, DEPARTMENT OF PHYSICS, COMPUTER SCIENCE AND ENGINEERING}
+{This thesis presents a computational and experimental study of airflow in a simulated wind tunnel environment. Using modern numerical techniques and small-scale experiments, results are compared and validated against theoretical models. Implications for applied physics and computational engineering are discussed.}
+
+\thesistitlepage
+{A STUDY OF SIMULATED WIND TUNNEL DATA}
+{JANE DOE}
+{2025}
+{PROF. SAM SMITH}
+{DR. LINDA JONES}
+{DR. ROBERT TAYLOR}
+
+\frontmatter
+\dedication{To my family and mentors, for their unwavering support.}
+\acknowledgements{I thank my advisor, my committee, and my peers for their invaluable guidance and encouragement.}
+
+\tableofcontents
+\listoftables
+\listoffigures
+
+\mainmatter
+
+\chapter{Introduction}
+Aerodynamics has long been a central theme in applied physics and engineering. This thesis explores a simulation of airflow using both numerical and experimental techniques.
+
+According to Einstein's famous relation, $E = mc^2$ \cite{einstein1905}, energy and mass are equivalent. In computational engineering, such relations guide scaling and modeling choices.
+
+\chapter{Methods}
+A wind tunnel simulation was created using numerical integration and computational fluid dynamics software. The following equation was central to our model:
+\begin{equation}
+\nabla \cdot \vec{E} = \frac{\rho}{\epsilon_0}
+\end{equation}
+
+A sample circuit diagram is shown in Figure~\ref{fig:circuit}.
+
+\cnuFigure{Circuit diagram of the measurement system.\label{fig:circuit}}{
+\begin{circuitikz}
+\draw (0,0) to[battery] (0,2)
+      to[R=1\,\si{\kilo\ohm}] (2,2)
+      to[short] (2,0)
+      to[short] (0,0);
+\end{circuitikz}
+}
+
+\chapter{Results}
+The experiments produced the following summary (Table~\ref{tab:results}).
+
+\cnuTable{Summary of airflow measurements.\label{tab:results}}{
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Condition & Mean Velocity (m/s) & Std Dev \\\\
+\midrule
+A & 10.2 & 0.5 \\\\
+B & 12.4 & 0.8 \\\\
+C & 9.8  & 0.6 \\\\
+\bottomrule
+\end{tabular}
+}
+
+\chapter{Conclusions}
+This study demonstrates that simulated airflow results can be consistent with theoretical predictions when carefully calibrated. Future work will expand to larger tunnel scales.
+
+\printbibliography[title={LITERATURE CITED}]
+\blankpage
+
+\appendix
+\chapter{Additional Data}
+Additional plots and data tables are included here.
+
+\end{document}
